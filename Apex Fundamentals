@@ -1,3 +1,7 @@
+Max log files per user - 20
+log file size - 2MB(if more then new log file will get created)
+Max debug memory per org is 50MB
+
 wrapper - embed primitive types (Integer class instead of int,char) -heap not stack
 
 primitive - Integer
