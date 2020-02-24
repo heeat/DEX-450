@@ -1,0 +1,5 @@
+wrapper - embed primitive types (Integer class instead of int,char) -heap not stack
+
+primitive - Integer
+referenced - memory allocated through constructer (Account acc = new Account())
+
