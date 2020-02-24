@@ -70,11 +70,11 @@ System.debug('emplist info is ' + emplist);
 
 //deepclone -- 12:47:34:003 USER_DEBUG [9]|DEBUG|emplist info is (Contact:{FirstName=Chandra, LastName=Shekar}, Contact:{FirstName=David, LastName=Miller}, Contact:{FirstName=Pique, LastName=Shakira})
 
+
+//deepclone - creates a new reference in heap
+//clone - Points to existing reference in heap
+
 //clone -- 12:47:34:003 USER_DEBUG [9]|DEBUG|emplist info is (Contact:{FirstName=Chandra, LastName=Shekar}, Contact:{FirstName=David, LastName=Hudson}, Contact:{FirstName=Pique, LastName=Shakira})
 
 */
-
-
-
-
 
