@@ -12,9 +12,65 @@ Singleton - Only 1 reference - no new keyword - constructor is a Private (String
 
 1.primitive - objects - storing primitive value as wrapper - Auto boxing
 2.referenced
-3.collections
+3.collections -- list, set, map - (index is primary key). 90% transaction uses List
+
+
 
 
 Super class - SObject - all standard and custom objects are child to SObject.
 Process of moving the data from child to parent is UPCASTING - Implicit (no need to convert since sobject is super class) SObject = object.
 Process of moving the data from parent to child is DOWNCASTING - Explict (need to convert ) SObject memory ---- account = (Account)SObject.
+
+Example:
+/*
+Account acc = new Account(name='TESLA');
+SObject obj1 = acc; //upcasting
+Account acc1 = (Account) obj1; //downcasting
+System.debug('Data Captured : ' + acc1.name); // TESLA
+System.debug('Data Captured : ' + acc1); // Account:{Name=TESLA}
+*/
+
+Transactions in cloud run as Batches
+
+Example:
+/*
+List<String> emplist = new List<String>();
+emplist.add('glucose');
+emplist.add('vitamins');
+emplist.add('jam');
+emplist.add('butter');
+emplist.add('jam');
+System.debug('list : ' + emplist);
+
+for(Integer i = 0; i<emplist.size(); i++) //cyclomatic complexity more
+{
+    System.debug('Name is : ' + emplist.get(i)+' size is :'+ emplist.get(i).length());
+}
+
+for(String ename : emplist) //cyclomatic complexity less - forEach
+{
+    System.debug('Name is : ' + ename+' size is :'+ ename.length());
+}
+*/
+
+/*
+Contact c1 = new Contact(firstName='Chandra',lastName='Shekar');
+Contact c2 = new Contact(firstName='David',lastName='Miller');
+Contact c3 = new Contact(firstName='Pique',lastName='Shakira');
+
+List<Contact> clist = new List<Contact>{c1,c2,c3};
+//System.debug('clist info is ' + clist);
+
+List<Contact> emplist = clist.deepclone(); //seperate memories  //just clone references same memory
+System.debug('emplist info is ' + emplist);
+
+//deepclone -- 12:47:34:003 USER_DEBUG [9]|DEBUG|emplist info is (Contact:{FirstName=Chandra, LastName=Shekar}, Contact:{FirstName=David, LastName=Miller}, Contact:{FirstName=Pique, LastName=Shakira})
+
+//clone -- 12:47:34:003 USER_DEBUG [9]|DEBUG|emplist info is (Contact:{FirstName=Chandra, LastName=Shekar}, Contact:{FirstName=David, LastName=Hudson}, Contact:{FirstName=Pique, LastName=Shakira})
+
+*/
+
+
+
+
+
