@@ -144,6 +144,9 @@ For every Object there is an API created.
 .. Database.Query('') - >parameter is a string so -- > Dynamic SOQL - > because we can alter dtring anytime.
 .. If you want Group By we have to include aggregrate functions.
 
+//List<AggregateResult> alist = [select BillingCity,count(Name) ccount from Account Group By billingCity];
+    for(AggregateResult ar : alist){ System.debug('city :' + ar.get('BillingCity'))+ ' '+ar.get('ccount'))  }
+
 2.SOSL
 3.DML
 
