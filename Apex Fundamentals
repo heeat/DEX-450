@@ -1,3 +1,9 @@
+Database.com is where data is stored
+Force.com will contain metadata --- Package.xml
+Salesforce itself is an ORM - Objects Relational Mapping (Framework)
+Develop in Force.com.
+
+
 Max log files per user - 20
 log file size - 2MB(if more then new log file will get created)
 Max debug memory per org is 50MB
@@ -16,9 +22,7 @@ Singleton - Only 1 reference - no new keyword - constructor is a Private (String
 
 1.primitive - objects - storing primitive value as wrapper - Auto boxing
 2.referenced
-3.collections -- list, set, map - (index is primary key). 90% transaction uses List
-
-
+3.collections -- list, set, map - (index is primary key). 90% transaction uses List -- nested max 5 levels 
 
 
 Super class - SObject - all standard and custom objects are child to SObject.
@@ -117,13 +121,31 @@ emap.put(104,'Pune');
 emap.put(105,'Chennai');
 
 
-System.debug('city data for 104 is '+emap.get(104));
-System.debug('All key values '+emap.keySet());
-System.debug('All data '+emap.values());
+System.debug('city data for 104 is '+emap.get(104)); //city data for 104 is pune
+System.debug('All key values '+emap.keySet()); //{101,102,103,104,105}
+System.debug('All data '+emap.values()); //
 ```
 
+Transaction - Request and Response. -- Objects are involved always
 
+Governer Limits (GL) - 
 
+1.transaction specific - reset GL at end - DML/Queries
+2.Timebound - reset GL for every 24 hours - Webservices/Email Services
+
+Transactional Statements are of 3 types :
+
+API is a class which contains fields and fucntions of all objects in Salesforce ORG. (Save,Edit,Clone,Cancel Buttons are all methods)
+For every Object there is an API created.
+
+1.SOQL - only for fetching (select statements) SQL -- performs all unlike SOQL (DML,DDL,TCL)
+
+.. [] notation
+.. Database.Query('') - >parameter is a string so -- > Dynamic SOQL - > because we can alter dtring anytime.
+.. If you want Group By we have to include aggregrate functions.
+
+2.SOSL
+3.DML
 
 
 
