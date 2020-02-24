@@ -1,0 +1,4 @@
+1.AWC wants to provide end date on course delivery object to understand the delivery plan.
+
+2.AWC wants the course delivery should be given as scheduled, only if the start of course is a future date.
+
