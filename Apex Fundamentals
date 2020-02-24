@@ -3,3 +3,4 @@ wrapper - embed primitive types (Integer class instead of int,char) -heap not st
 primitive - Integer
 referenced - memory allocated through constructer (Account acc = new Account())
 
+Anon Window - As a transaction to Application server and returns a log file
