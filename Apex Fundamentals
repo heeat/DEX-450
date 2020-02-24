@@ -37,7 +37,7 @@ System.debug('Data Captured : ' + acc1); // Account:{Name=TESLA}
 Transactions in cloud run as Batches
 
 Example:
-/*
+```
 List<String> emplist = new List<String>();
 emplist.add('glucose');
 emplist.add('vitamins');
@@ -55,9 +55,9 @@ for(String ename : emplist) //cyclomatic complexity less - forEach
 {
     System.debug('Name is : ' + ename+' size is :'+ ename.length());
 }
-*/
+```
 
-/*
+```
 Contact c1 = new Contact(firstName='Chandra',lastName='Shekar');
 Contact c2 = new Contact(firstName='David',lastName='Miller');
 Contact c3 = new Contact(firstName='Pique',lastName='Shakira');
@@ -75,6 +75,55 @@ System.debug('emplist info is ' + emplist);
 //clone - Points to existing reference in heap
 
 //clone -- 12:47:34:003 USER_DEBUG [9]|DEBUG|emplist info is (Contact:{FirstName=Chandra, LastName=Shekar}, Contact:{FirstName=David, LastName=Hudson}, Contact:{FirstName=Pique, LastName=Shakira})
+```
 
-*/
+/.
+Set - unique values - no duplicates - if duplicate overrides existing.
+No Indexing.
+4 functions in set :
+1.addAll
+2.containsAll
+3.removeAll
+4.retainAll
+
+```
+Set<String> eset = new Set<String>{'a','b','c','d'};
+Set<String> dset = new Set<String>{'x','y','z'};
+
+Set<String> zset = new Set<String>();
+zset.addAll(eset);
+zset.addAll(dset);
+
+System.debug('Set value : '+ zset);
+
+if(zset.containsAll(eset)) System.debug('available');
+
+zset.removeAll(eset);
+System.debug('Set value : '+ zset);
+
+zset.retainAll(eset);
+System.debug('Set value : '+ zset);
+```
+
+Map - Key Value pairs - Schema Object reference
+
+```
+Map<Integer,String> emap = new Map<Integer,String>();
+
+emap.put(101,'Banglore');
+emap.put(102,'Chennai');
+emap.put(103,'Hyderabad');
+emap.put(104,'Pune');
+emap.put(105,'Chennai');
+
+
+System.debug('city data for 104 is '+emap.get(104));
+System.debug('All key values '+emap.keySet());
+System.debug('All data '+emap.values());
+```
+
+
+
+
+
 
