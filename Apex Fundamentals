@@ -4,3 +4,17 @@ primitive - Integer
 referenced - memory allocated through constructer (Account acc = new Account())
 
 Anon Window - As a transaction to Application server and returns a log file
+
+3 types -
+
+Singleton - Only 1 reference - no new keyword - constructor is a Private (String abc = new String() -- > not possible) 
+"final" -- > no inheritance
+
+1.primitive - objects - storing primitive value as wrapper - Auto boxing
+2.referenced
+3.collections
+
+
+Super class - SObject - all standard and custom objects are child to SObject.
+Process of moving the data from child to parent is UPCASTING - Implicit (no need to convert since sobject is super class) SObject = object.
+Process of moving the data from parent to child is DOWNCASTING - Explict (need to convert ) SObject memory ---- account = (Account)SObject.
