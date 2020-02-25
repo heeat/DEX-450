@@ -218,8 +218,11 @@ for(Certification__c cr : crlist)
 
 LIFECYCLE:
 
-DML ->    CACHING -> SAVE (hit the object) -> COMMIT (Hit the database.com and save)  
---> All DML operations are processed using collections(list) - bulkify 
+DML ->    
+->CACHING (200 -batch will be loaded into buffer memory) 
+->SAVE (hit the object ID's will get generated and records will go to Objects.) 
+->COMMIT (stored in the database.com and saved no returning back)  
+-> All DML operations are processed using collections(list) - bulkify 
 
 Standalone DML and Database methods -> two ways to process the DML 
 
@@ -245,15 +248,4 @@ for(Database.SaveResult sr : slist){
     else System.debug('Errors are : '+sr.getErrors());
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
 
