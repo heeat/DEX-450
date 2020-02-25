@@ -18,3 +18,4 @@ Best Practices:
  7.use "For update" keyword in SOQL transactions to avoid deadlocks in bulk transactions -- two queries hit same resource deadlcok happens.
  8.Use Dynamic SOQL in the business logic methods that deal with UI.
  
+FOR UPDATE -- > shared lock.
