@@ -1,0 +1,19 @@
+1.AWC wants to provide end date on course delivery object to understand the delivery plan.
+
+2.AWC wants the course delivery should be given as scheduled, only if the start of course is a future date.
+
+3.AWC wants to show all the accounts with Associated technicians from the database - left outer
+
+4.Display technician details with associated account for all technicians in database
+
+5.Display course name and course description along with certification name linked with the course for all courses
+//Select Name,certification__r.name from Course__c 
+
+6.Display accounts only if technicians are available on the technicians
+
+//select Name,Type,annualrevenue from account where Id in (select accountId from Contact) --
+//subquery brackets after where 
+//inner if brackets inside
+
+7. display certs where courses are planned in org.
+//select Name from certification__c where id in (select certification__c from course__c)
