@@ -155,14 +155,17 @@ Custom Objects:
 ..parent will have a single reference of child "List"(List<Course__c>"Courses__r")
 ..child will have two references "ID"(certification__c) and "Object"(Certification__r)
 
-Joins - 
+Joins - Max 4 objects
 
 Outer - P&C of parent - Left Outer -else null value / if child values - right outer,
 inner - Only parents where child is available - left inner join /  Only child where parent is available - right inner join,
 Anti - Negation of inner.
 
+2.SOSL - Salesforce Object Search Language. - max 2000 objects - 1 object - 800 fields.
+ 1. [ FIND 'searchtext' IN Name/Email/Phone FIELDS returning Account(Name,Type),Contact(firstName,lastName) ]
+ return type - List<List<SObject>>
+ 2.Search.Query('String SOSL') ---> Dynamic SOSL.
+ 
 
 
-
-2.SOSL
 3.DML
