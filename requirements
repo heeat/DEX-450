@@ -32,11 +32,7 @@
  4.Course name
  5.Instructor name
  6.status
- 
  for all scheduled courses from database
+
 //select name,Location__c,Start_Date__c,course__r.name,instructor__r.name from course_delivery__c WHERE status__c = 'Scheduled'
-
-
-
-
 
