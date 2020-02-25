@@ -1,0 +1,13 @@
+Governer Limits:
+
+ 1. Number of SOSL Queries : 20.
+ 2. Number of Records returned by 1 SOSL Query is 2000.
+ 3. Heap Size is 6MB.
+
+Best Practices:
+ 
+ 1. Never replace SOQL with SOSL.
+ 2. Use WILDCARD after minimum 2 characters in search text.(AC* Not a*).
+ 3. Always mention field type for searching(Name/Email/Phone).
+ 4. Mention fields in returning objects or else Salesforce return object ID's only.
+ 5. Apply filters in SOSL Queries to limit the result sets for processing.
