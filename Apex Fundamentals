@@ -214,7 +214,33 @@ for(Certification__c cr : crlist)
     System.debug('Account ---' + cr.name+'    '+cr.status__c);
 }
 ```
- 
+3.DML - Data Manipulation Language
+
+LIFECYCLE:
+
+DML ->    CACHING -> SAVE (hit the object) -> COMMIT (Hit the database.com and save)  
+--> All DML operations are processed using collections(list) - bulkify 
+
+Standalone DML and Database methods -> two ways to process the DML 
+
+--> standalone uses reserved words (insert/update...) - ATOMOCITY (either all records / none of the records)
+.. TRY CATCH Exception handling
+
+--> DM methods -- DataBase.insert .... -- PARTIAL SUCCESS/ FAILURE
+..SaveResult/UpsertResult/DeleteResult
 
 
-3.DML
+Dataloader - Batches - 200 records(Synchronous - sequence)  - 2000-10000(Async - no sequential).
+
+
+
+
+
+
+
+
+
+
+
+
+
