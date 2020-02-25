@@ -161,10 +161,59 @@ Outer - P&C of parent - Left Outer -else null value / if child values - right ou
 inner - Only parents where child is available - left inner join /  Only child where parent is available - right inner join,
 Anti - Negation of inner.
 
+Limits API:
+
+```
+System.debug('Total GL : '+ Limits.getLimitQueryRows());
+System.debug('Cum rows : '+ Limits.getQueryRows());
+
+List<Account> acclist = [select name from Account where industry = 'Technology'
+                        LIMIT : (Limits.getLimitQueryRows() - Limits.getQueryRows())];
+System.debug('no of acc records : '+ acclist.size());
+
+System.debug('Total GL second : '+ Limits.getLimitQueryRows());
+System.debug('Cum rows second : '+ Limits.getQueryRows());
+
+List<Account> acclist1 = [select name from Account where industry = 'Manufacturing'
+                         LIMIT : (Limits.getLimitQueryRows() - Limits.getQueryRows())];
+System.debug('no fo man records : '+ acclist1.size());
+
+System.debug('Total GL third : '+ Limits.getLimitQueryRows());
+System.debug('Cum rows third : '+ Limits.getQueryRows());
+```
+
+
 2.SOSL - Salesforce Object Search Language. - max 2000 objects - 1 object - 800 fields.
  1. [ FIND 'searchtext' IN Name/Email/Phone FIELDS returning Account(Name,Type),Contact(firstName,lastName) ]
  return type - List<List<SObject>>
  2.Search.Query('String SOSL') ---> Dynamic SOSL.
+ 
+ Example :
+ ```
+ List<List<SObject>> slist = [ FIND 'Acc*' IN Name FIELDS RETURNING
+                             Account(name,annualrevenue),
+                             Contact(firstName,lastName),
+                             Certification__c(name,status__c)];
+
+List<Account> acclist = slist.get(0);
+List<Contact> clist = slist.get(1);
+List<Certification__c> crlist = slist.get(2);
+
+for(Account acc : acclist)
+{
+    System.debug('Account ---' + acc.name+'    '+acc.annualrevenue);
+}
+
+for(Contact ccc : clist)
+{
+    System.debug('Account ---' + ccc.firstname+'    '+ccc.lastName);
+}
+
+for(Certification__c cr : crlist)
+{
+    System.debug('Account ---' + cr.name+'    '+cr.status__c);
+}
+```
  
 
 
