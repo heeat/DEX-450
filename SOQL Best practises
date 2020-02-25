@@ -1,0 +1,20 @@
+Limitations of SOQL transactions :
+ 
+ 1.Number of SOQL statements fire in a transaction is 100.
+ 2.Number of records returned by all SOQL queries in a transaction is 50,000.
+ 3.Maximum Heap size for records stored in transaction is 6MB.
+ 
+Best Practices:
+
+ 1.Never put SOQL query in the body of "for loop". -Very Important
+ 2.Always use SOQL Query with where clause for retrieving filter data
+ 3.Use indexed fields for filtering that fetches the data quickly.
+ NOTE : cluster index - id non - cluster --- > unique fields.
+ 4.Always use ORDER BY clause at the end of the query for getting sequenstial output.
+ 5.Use LIMIT Keyword with Limits API for making your query getting data always within governer limits - vvvvvimportant
+ LIMIT : (Limits.getLimitQueryRows - Limit.getQueryRows)  Synchronous transaction 50,000 / Async - 5 Million (sequence is not guarenteed)
+ 6.Always give preference to child to parent relationships (right join) for getting data from multiple objects.
+ Cartesian result -- if subquery and inner query.
+ 7.use "For update" keyword in SOQL transactions to avoid deadlocks in bulk transactions -- two queries hit same resource deadlcok happens.
+ 8.Use Dynamic SOQL in the business logic methods that deal with UI.
+ 
