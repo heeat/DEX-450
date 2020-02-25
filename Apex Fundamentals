@@ -231,6 +231,20 @@ Standalone DML and Database methods -> two ways to process the DML
 
 Dataloader - Batches - 200 records(Synchronous - sequence)  - 2000-10000(Async - no sequential).
 
+Example of DM Methods:
+```
+Account acc1 = new Account(name='Account11',type='Customer',annualrevenue=1000000);
+Account acc2 = new Account(name='Account22',type='Customer',annualrevenue=4000000);
+Account acc3 = new Account(name='Account33',type='Customer',annualrevenue=-5000);
+
+List<Account> acclist = new List<Account>{acc1,acc2,acc3};
+List<Database.SaveResult> slist = Database.insert(acclist, false);
+
+for(Database.SaveResult sr : slist){
+    if(sr.isSuccess() == true) System.debug('Records loaded '+sr.getId());
+    else System.debug('Errors are : '+sr.getErrors());
+}
+```
 
 
 
