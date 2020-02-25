@@ -224,11 +224,10 @@ DML ->    CACHING -> SAVE (hit the object) -> COMMIT (Hit the database.com and s
 Standalone DML and Database methods -> two ways to process the DML 
 
 --> standalone uses reserved words (insert/update...) - ATOMOCITY (either all records / none of the records)
-.. TRY CATCH Exception handling
+.. TRY CATCH Exception handling -- for test classes we use standalone
 
---> DM methods -- DataBase.insert .... -- PARTIAL SUCCESS/ FAILURE
-..SaveResult/UpsertResult/DeleteResult
-
+--> DM methods -- DataBase.insert .... - PARTIAL SUCCESS/ FAILURE -- > Database.insert('string soql',false)
+..SaveResult/UpsertResult/DeleteResult -- All business Logic methods must have DataBase.methods 
 
 Dataloader - Batches - 200 records(Synchronous - sequence)  - 2000-10000(Async - no sequential).
 
