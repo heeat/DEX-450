@@ -15,5 +15,28 @@
 //subquery brackets after where 
 //inner if brackets inside
 
-7. display certs where courses are planned in org.
+7.Display certs where courses are planned in org.
 //select Name from certification__c where id in (select certification__c from course__c)
+
+8.Display Contacts or technicians with Account mapping 
+//select Name,firstName,account.name from Contact where accountID <> NULL -- <>(not equal to)
+
+9.Display courses tagged to certifications in organisation
+//select name from Course__c where certification__c <> null
+
+10.Display below fields from course delivery obj
+
+ 1.Name
+ 2.Location
+ 3.Delivery start date
+ 4.Course name
+ 5.Instructor name
+ 6.status
+ 
+ for all scheduled courses from database
+//select name,Location__c,Start_Date__c,course__r.name,instructor__r.name from course_delivery__c WHERE status__c = 'Scheduled'
+
+
+
+
+
