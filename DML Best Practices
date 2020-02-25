@@ -1,0 +1,25 @@
+Governer Limits:
+ 1. Number of DML statements per transaction is 150.
+ 2. Number of records processed through Single DML Statement in a transaction is 20,000.
+ 3. Heap Size is 6MB.
+ 
+Best Practices:
+
+ 1. Always use Bulkification in DML Statements -- Bulkify - > processing DML staments using Lists 
+ 2. Don't put DML in the body of for loop. -- > reason is  Governer Limits 
+ 3. Always use Exception handling along with DML.
+ 4. Use database methods for performing DML actions to achieve partial success or failure transactions.
+ 5. Use Nested "for loop" for handling DML Statements to consider heap size limitations of your transaction.
+ 
+ Example : default batch size : 200 / 150*200 = 30,000 records can be processed with this code.
+ ```
+ for(List<Account> acclist : ['SOQL'])
+{
+    List<Account> uplist = new List<Account>();
+    for(Account acc : acclist){
+        acc.city = 'xyz';
+        uplist.add(acc);
+    }
+    Database.upsert(uplist,false);
+}
+```
