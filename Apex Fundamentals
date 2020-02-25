@@ -109,7 +109,7 @@ zset.retainAll(eset);
 System.debug('Set value : '+ zset);
 ```
 
-Map - Key Value pairs - Schema Object reference
+Map - Key Value pairs - Schema Object reference - Used in Schema Objects - Metadata
 
 ```
 Map<Integer,String> emap = new Map<Integer,String>();
@@ -130,7 +130,7 @@ Transaction - Request and Response. -- Objects are involved always
 
 Governer Limits (GL) - 
 
-1.transaction specific - reset GL at end - DML/Queries
+1.Transaction specific - reset GL at end - DML/Queries
 2.Timebound - reset GL for every 24 hours - Webservices/Email Services
 
 Transactional Statements are of 3 types :
@@ -149,6 +149,3 @@ For every Object there is an API created.
 
 2.SOSL
 3.DML
-
-
-
