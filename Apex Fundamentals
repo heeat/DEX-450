@@ -141,7 +141,7 @@ For every Object there is an API created.
 1.SOQL - only for fetching (select statements) SQL -- performs all unlike SOQL (DML,DDL,TCL)
 
 .. [] notation
-.. Database.Query('') - >parameter is a string so -- > Dynamic SOQL - > because we can alter dtring anytime.
+.. Database.Query('') - >parameter is a string so -- > Dynamic SOQL - > because we can alter the String anytime.
 .. If you want Group By we have to include aggregrate functions.
 
 //List<AggregateResult> alist = [select BillingCity,count(Name) ccount from Account Group By billingCity];
