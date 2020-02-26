@@ -63,6 +63,7 @@ trigger DeliveryTrigger on Course_Delivery__c (before insert,before update) {
 
 12.AWC has a policy that the courses need to be updated with duration larger than existing duration. 
 if end user tries to update with lesser value system should not accept.
+
 ```
 trigger CourseDuration on Course__c (before update) {
     
