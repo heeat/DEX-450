@@ -41,9 +41,5 @@ Apex class - > can be used as : Always starts with Capital Letter
   
   for methods :
   ACCESS MODIFIERS -- public/private/global/protected(can be accessed only in child class).
-  NON ACCESS MODIFIERS -- abstract/virtual/final/static(no memory reallocation)
-  
-  
-  
-  } 
+  NON ACCESS MODIFIERS -- abstract/virtual/final/static(no memory reallocation) } 
        
