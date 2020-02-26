@@ -1,6 +1,6 @@
 Programming Automation in Apex:
 
-1 OBJECT 1 TRIGGER POLICY. -- Traffic cop logic (line 15)
+1 OBJECT 1 TRIGGER POLICY. -- Traffic cop logic (line 16)
 
   1.Trigger - Apex Code built on SF that gets activated by events. - bound to an object
   two types : Before (After caching before Saving), After (After saving before Commiting).
@@ -13,7 +13,7 @@ Programming Automation in Apex:
  Trigger API Class -- > Singleton/Final/Static - so we can use (Trigger.new) nomenclature.
  
  Variables :
- 1. isInsert/Update/Delete/Undelete/Before/After
+ 1. isInsert/Update/Delete/Undelete/Before/After  -- BRANCHING
  2. Collections :
      .new (holds caching data of DML) -- R/W / old(holds existing records data which are in "new") -- readOnly
     ..newMap(Key:ID,Value:Object reference)/OldMap -- > After trigger because we need ID's
