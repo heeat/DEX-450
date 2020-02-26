@@ -89,3 +89,29 @@ trigger CourseDuration on Course__c (before update) {
 ```
 13.AWC wants the technicians mapping to specific account should be updated with the phone numbers of the 
    specific account and throw an error message if phone numbers dont match with account.
+   
+   ```
+   trigger contactPhone on Contact (before update) {
+    Set<ID> cset = new Set<ID>();
+    for(Contact clist : Trigger.new)
+    {
+     cset.add(clist.Id);
+    }
+    
+    List<Contact> cphone = [select account.phone from Contact where ID =:cset];
+    
+    for(contact xlist : Trigger.new)
+    {
+        for(Contact clllis : cphone) 
+        {
+            if(xlist.phone != clllis.account.phone)
+            {
+                xlist.Phone.addError('Mistake');
+            }
+        }  
+    }
+}
+```
+
+14.AWC wants instructor tagged to course delivery recieve a chatter notification related to the course name, delivery date, location 
+   for setting up the delivery logistics and travel plan.
