@@ -115,3 +115,58 @@ trigger CourseDuration on Course__c (before update) {
 
 14.AWC wants instructor tagged to course delivery recieve a chatter notification related to the course name, delivery date, location 
    for setting up the delivery logistics and travel plan.
+   
+  ```
+  trigger DeliveryTrigger on Course_Delivery__c (before insert,before update,after insert,after update) {
+
+    if(Trigger.isbefore)
+    {
+        if(Trigger.isInsert || Trigger.isUpdate)
+        {
+            List<Holiday> hlist = [SELECT Id, Name, ActivityDate FROM Holiday
+                                  LIMIT 20];
+            for(Course_Delivery__c nr : Trigger.new)
+            {
+                for(Holiday hd : hlist){
+                    if(nr.Start_Date__c == hd.ActivityDate)
+                    {
+                        nr.addError('Cannot start a course delivery on a holiday '+ hd.Name);
+                    }
+                }
+            }
+        }
+    }
+  
+    if(Trigger.isafter)
+    {
+        if(Trigger.isInsert || Trigger.isUpdate)
+        { 
+            List<FeedItem> flist = new  List<FeedItem>();
+            Set<id> cdset = new Set<id>();
+            for(Course_Delivery__c cd : Trigger.new)
+            {
+                if(cd.status__c == 'scheduled') cdset.add(cd.id);
+            } 
+        
+     List<Course_Delivery__c> cdlist = [select course__r.name,location__c,Instructor__c,start_date__c
+                                       FROM course_delivery__c where id in :cdset];
+        
+        for(Course_Delivery__c rec : cdlist)
+        {
+            FeedItem fd = new FeedItem();
+            fd.Title = 'Course Delivery Notification';
+            fd.Body = 'Instructor ' + rec.course__r.name+ 
+                		'at location '+rec.location__c+
+                		'ON ' + rec.start_date__c;
+            fd.ParentId = rec.Instructor__c;
+            fd.LinkUrl = '/'+rec.ID;
+            flist.add(fd);
+        }
+        List<Database.SaveResult> slist = Database.insert(flist, false);
+            for(Database.SaveResult sr : slist){
+                if(!sr.isSuccess()) System.debug('----'+sr.getErrors());
+                
+        }}
+
+    }}
+    ```
