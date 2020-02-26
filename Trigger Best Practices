@@ -8,14 +8,18 @@ Best Practices:
  6. Use future annotated triggers for calling trigger execution through web services.
  7. Use debug logs and debug statements for understanding execution problems involving triggers in objects.
 
+
+WORKFLOW ACTIONS ARE OVERRIDED BY BEFORE TRIGGERS because of execution order .
+
+
 Trigger Execution Order :
 1. Caching (milestone)
 
 2. System validations
 3. Before triggers
 4. System validations (rerun)
-5. Custom Validations - wont run in the second cycle
-6. Duplicate Rules - wont run in the second cycle
+5. Custom Validations - won't run in the second cycle 
+6. Duplicate Rules - won't run in the second cycle
 
 7. Save (milestone)
 
