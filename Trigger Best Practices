@@ -1,0 +1,33 @@
+Best Practices:
+
+ 1. Implement 1 Object 1 Trigger Policy
+ 2. Use Trigger branching for executing business methods on different events.
+ 3. Never put business implementations in trigger and call apex methods for firing business rules that covers record level security.
+ 4. Use static variables in triggers for handling memory throughout the transaction aswell as controlling trigger recursions.
+ 5. Understand Trigger execution order to avoid conflicts between triggers and other automation tools.
+ 6. Use future annotated triggers for calling trigger execution through web services.
+ 7. Use debug logs and debug statements for understanding execution problems involving triggers in objects.
+
+Trigger Execution Order :
+1. Caching (milestone)
+
+2. System validations
+3. Before triggers
+4. System validations (rerun)
+5. Custom Validations - wont run in the second cycle
+6. Duplicate Rules - wont run in the second cycle
+
+7. Save (milestone)
+
+8. After triggers
+9. Assignment Rules
+10. Auto Response rules
+11. WorkFlow Rules
+12. Process Builder
+13. Sharing Rules
+14. Roll Up Summary fields will be calculated
+15. Escalation Rules
+
+16. Commit (final Milestone)
+
+17. Clean up OPS (Post commit ops)
