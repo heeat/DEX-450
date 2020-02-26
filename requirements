@@ -37,3 +37,27 @@
 //select name,Location__c,Start_Date__c,course__r.name,instructor__r.name from course_delivery__c WHERE status__c = 'Scheduled'
 
 11. AWC wants to ensure course deliveries should not be scheduled on company holidays.
+//Trigger :
+```
+trigger DeliveryTrigger on Course_Delivery__c (before insert,before update) {
+
+    if(Trigger.isbefore)
+    {
+        if(Trigger.isInsert || Trigger.isUpdate)
+        {
+            List<Holiday> hlist = [SELECT Id, Name, ActivityDate FROM Holiday
+                                  LIMIT 20];
+            for(Course_Delivery__c nr : Trigger.new)
+            {
+                for(Holiday hd : hlist){
+                    if(nr.Start_Date__c == hd.ActivityDate)
+                    {
+                        nr.addError('Cannot start a course delivery on a holiday '+ hd.Name);
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
