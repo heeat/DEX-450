@@ -1,0 +1,4 @@
+Testing: (75% benchmark)
+Unit testing for developers (Test class).
+
+test engine in Applications server will render @isTest and confirm it as test class.
