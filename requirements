@@ -36,3 +36,4 @@
 
 //select name,Location__c,Start_Date__c,course__r.name,instructor__r.name from course_delivery__c WHERE status__c = 'Scheduled'
 
+11. AWC wants to ensure course deliveries should not be scheduled on company holidays.
