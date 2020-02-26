@@ -69,12 +69,20 @@ trigger CourseDuration on Course__c (before update) {
     
     for(Course__c newdata : Trigger.new)
     {
-        for(Course__c olddata : Trigger.old){
+      
+      /*  for(Course__c olddata : Trigger.old)
+        {
+            if(newdata.id == olddata.id && newdata.Duration__c < olddata.Duration__c)    ---> nested for loop increases complexity
             
-            if(newdata.id == olddata.id && newdata.Duration__c < olddata.Duration__c)
             {
                 newdata.Duration__c.addError('Invalid duration as per company policy');
             }
+        }*/
+        
+        
+        if(newdata.Duration__c < Trigger.oldMap.get(newdata.Id).duration__c) --- > instead of nested for loop we use oldmap(contains id)
+        {
+              newdata.Duration__c.addError('Invalid duration as per company policy');
         }
     }
 }
