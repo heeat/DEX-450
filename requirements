@@ -248,3 +248,5 @@ trigger CourseDuration on Course__c (before update) {
     }
 }
 ```
+
+16. AWC wants a C.obj linked with compensation plan for the employees, for calculating tax related information for technicians.
