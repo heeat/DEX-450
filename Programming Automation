@@ -17,3 +17,33 @@ Programming Automation in Apex:
  2. Collections :
      .new (holds caching data of DML) -- R/W / old(holds existing records data which are in "new") -- readOnly
     ..newMap(Key:ID,Value:Object reference)/OldMap -- > After trigger because we need ID's
+
+
+Apex class - > can be used as : Always starts with Capital Letter
+
+       Trigger Handlers
+       Batch Classes 
+       Scheduled  
+       Web Services  
+       Email Services  
+       Controllers  
+       Test Classes
+  
+  Model of a class -->  ACCESS MODIFIER- Non Access Modifier- Security Modifiers- 
+  
+  Access Modifier (public/ private(test classes / inner classes)/global (used outside org --> Web services/Email/Batch/Scheduled/Package))
+  
+  Non Access Modifier - behaviour of the class -- default value is "Final" -->/Abstract(inheritnace but should have 1 abstract method )
+  /virtual(used for inheritance)
+  
+  Security Modifiers --> with sharing (user context) / without sharing (System Context) ---> always give User context (with)
+  classname { 
+  
+  for methods :
+  ACCESS MODIFIERS -- public/private/global/protected(can be accessed only in child class).
+  NON ACCESS MODIFIERS -- abstract/virtual/final/static(no memory reallocation)
+  
+  
+  
+  } 
+       
