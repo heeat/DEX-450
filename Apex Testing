@@ -17,5 +17,14 @@ Passing test data 3 types:
 
   1.Static resources through csv file -> (Best Practice) -- because it's client data
   2.Factory methods - >
-  3.Existing records of object - >
+  3.Existing records of object - > @isTest(SeeAllData=true) -- open up test class to use existing records in the org
   
+Best Pratices : 
+  1. 1 Business class - 1 test class
+  2. Pass testData to cover all branches of Business classto maximize code coverage 
+  3. Prefer using static resources for passing testdata
+  4. Create positive test, Negative test and Limits test scenarios using test methods.
+  5. Pass only 1 pair of startTest() and stopTest() in a test method.
+  6. Execute testmethods sequentially by disabling parallel testing to avoid test conflicts.
+  7. Run testMethods as specific user using System.runAs() function to provide user context.
+  8. Plan regression test strategy for future releases and maintanance.
