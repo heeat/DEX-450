@@ -64,3 +64,6 @@ A sample VFPage :
 ```
 The output is added as a file in master branch as "Screenshot (3).png"
 
+Extension Controller : always kept upon vf which is already in bound with StandardController,
+
+
