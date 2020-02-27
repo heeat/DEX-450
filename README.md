@@ -1,2 +1,2 @@
 # DEX-450
-Salesforce training
+Salesforce training in APEX and VisualForce
