@@ -1,11 +1,12 @@
 Testing: (75% benchmark)
 Unit testing for developers (Test class).
 
+1 class 1 test class policy 
+
 test engine in Applications server will render @isTest and confirm it as test class.
 
 3 parts in a test methods :
 
-1. prepare - creation of test data
+1. prepare - creation of test data (positive/neg/governerlimits methods)
 2. execute - running business logic with test data 
 3. verify  - compare actual results with expected results (assertion)
-
