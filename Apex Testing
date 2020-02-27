@@ -16,7 +16,7 @@ startTest() stopTest() --> used for fresh Governer limits
 Passing test data 3 types:
 
   1.Static resources through csv file -> (Best Practice) -- because it's client data
-  2.Factory methods - >
+  2.Factory methods - > write a method with @testSetup and use it in all methods within class
   3.Existing records of object - > @isTest(SeeAllData=true) -- open up test class to use existing records in the org
   
 Best Pratices : 
@@ -25,6 +25,6 @@ Best Pratices :
   3. Prefer using static resources for passing testdata
   4. Create positive test, Negative test and Limits test scenarios using test methods.
   5. Pass only 1 pair of startTest() and stopTest() in a test method.
-  6. Execute testmethods sequentially by disabling parallel testing to avoid test conflicts.
+  6. Execute testmethods sequentially by disabling parallel testing to avoid test conflicts. - disable parallel in Apex test Execution/@isTest(isParallel= false)
   7. Run testMethods as specific user using System.runAs() function to provide user context.
   8. Plan regression test strategy for future releases and maintanance.
