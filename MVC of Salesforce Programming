@@ -11,7 +11,7 @@ View -- UI
  3. Lightning (html5 & JS/ no flash). -- > Advanced UI / Mobile apps. --> we can build using Aura and LWC(new). Only custom controllers.
  
  Controller -- Interaction with the View (request coming from the view is controlled)
- 1. Standard Controller -- > API/Already avaibale no need to create
+ 1. Standard Controller -- > Existing API's/Already avaibale no need to create
  2. Extension Controller --> Inheritance - Override Standard using this
  3. Custom Controller --> Entire functinality manually.
  4. List Controller -- > Give list as Output
