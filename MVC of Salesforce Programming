@@ -19,4 +19,48 @@ View -- UI
  
  All Controllers are built using APEX.
  
- 
+A sample VFPage :
+```
+<apex:page sidebar="false" showHeader="false">
+    <apex:stylesheet value="/resource/vfstylepage"/>
+    <div class="toolbar">
+        Certification SwitchBoard
+    </div>   
+    <apex:pageMessage severity="ERROR"></apex:pageMessage> // SHOWS ANY Validations
+    <div style ="height:100vh;width:95vw;background:black;padding:20px;text-align:center;border-radius:20px">
+    <p style="background:purple;padding:20px;height:30%;width:20%;float:left;border-radius:10px;">
+        <br/><br/><br/>
+        <span style="padding:5px; text-shadow:2px 2px white;
+                     font-size:25px;text-align:center;font-family:Verdana">
+            <apex:outputLink value="{!URLFOR($Action.Certification__c.New)}"> 
+            Certification
+            </apex:outputLink>
+        </span>
+        <br/><br/><br/>
+        <br/>
+        <span style="padding:5px;text-shadow:2px 2px white;
+                     font-size:25px;text-align:center;font-family:Verdana">
+            <apex:outputLink value="{!URLFOR($Action.Course__c.New)}"> 
+            Course 
+            </apex:outputLink>
+        </span>
+        <br/><br/><br/>
+        <br/>
+        
+        <span style="padding:5px;text-shadow:2px 2px white;
+                     font-size:25px;text-align:center;font-family:Verdana">
+            <apex:outputLink value="{!URLFOR($Action.Course_Delivery__c.New)}"> 
+            Course Delivery
+            </apex:outputLink>
+        </span>
+        </p>
+        <a href="/home/home.jsp">
+        <apex:image value="{!$Resource.logo}" height="300" width="300" /></a>
+        <p style="background:purple;padding:20px;height:30%;width:20%;float:right;border-radius:10px">
+        
+        </p>
+    </div>
+</apex:page>
+```
+
+
