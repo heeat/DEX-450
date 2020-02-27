@@ -10,3 +10,12 @@ test engine in Applications server will render @isTest and confirm it as test cl
 1. prepare - creation of test data (positive/neg/governerlimits methods)
 2. execute - running business logic with test data 
 3. verify  - compare actual results with expected results (assertion)
+
+startTest() stopTest() --> used for fresh Governer limits
+
+Passing test data 3 types:
+
+  1.Static resources through csv file -> (Best Practice) -- because it's client data
+  2.Factory methods - >
+  3.Existing records of object - >
+  
