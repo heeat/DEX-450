@@ -1,0 +1,22 @@
+MVC of Salesforce Programming :
+
+Model - View - Controller
+
+Model -- Objects which deals with persistance -- > triggers/DML.
+
+View -- UI 
+ 1. Standard views -- > page layouts/Tabs.
+ 
+ 2. Visualforce (html,CSS,Flash,JS) -- > Custom pages -- >can use all controllers.
+ 3. Lightning (html5 & JS/ no flash). -- > Advanced UI / Mobile apps. --> we can build using Aura and LWC(new). Only custom controllers.
+ 
+ Controller -- Interaction with the View (request coming from the view is controlled)
+ 1. Standard Controller -- > API/Already avaibale no need to create
+ 2. Extension Controller --> Inheritance - Override Standard using this
+ 3. Custom Controller --> Entire functinality manually.
+ 4. List Controller -- > Give list as Output
+ 5. Set Controller -->  Give set as Output
+ 
+ All Controllers are built using APEX.
+ 
+ 
