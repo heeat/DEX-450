@@ -66,5 +66,26 @@ The output is added as a file in master branch as "Screenshot (3).png"
 
 Extension Controller : always kept upon vf which is already in bound with StandardController.
 
+```
+public class StandardExtension {
 
-
+    SObject customObj;
+    
+    public StandardExtension(ApexPages.StandardController sc){      
+        customObj = sc.getRecord();    
+    }
+    
+    public PageReference save(){
+        try{
+            insert customObj;
+            PageReference pr = Page.CertificationBoard;
+            return pr;
+        }
+        catch(System.Exception ex){
+            System.debug('error message '+ ex.getMessage());
+            return null;
+        }
+        
+    }
+}
+```
