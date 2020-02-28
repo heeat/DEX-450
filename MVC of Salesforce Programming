@@ -89,5 +89,22 @@ public class StandardExtension {
     }
 }
 ```
+Best Practices VF:
 
+ 1. Simple Design
+ 2. All External or Internal scripts should be kept at the end of the visualforce page
+ 3. Maintain the Cache State of VFPage less than 135KB
+ 4. Externalize static text and css from VFPages and use custom labels to support internationalization
+ 5. All Apex classes that act as controllers should have test classes associated
+ 6. use get; set; methods of Apex Class for binding data at runtime where the sequence of methods execution is :
+     1. Constructor
+     2. Setter
+     3. getter
+ 7. Methods with PageReference return type are called navigational functions and we can instantiate PageReference in 4 ways:
+    1.PageReference pr = new PageReference(full URL)
+    2.PageReference pr = new PageReference(Partial URL)
+    3.PageReference pr = Page.VisualForcepageName
+    4.PageReference pr = null;
+ 8. Navigational Methods should be tested using MOCK URL's.
+ 
 
